@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  finished: false
+  declined: false
+  win: 1
+  lose: 1
+  draw: false
+
+two:
+  finished: false
+  declined: false
+  win: 1
+  lose: 1
+  draw: false
