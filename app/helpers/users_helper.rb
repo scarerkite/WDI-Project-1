@@ -2,7 +2,7 @@ module UsersHelper
   # def games_overview
   #   # Calculate computer matches
   #   c_wins = Game.where(win: params[:id] && lose: 1).count
-  #   c_wins = Game.where(win: 1 && lose: params[:id]).count
+  #   c_losses = Game.where(win: 1 && lose: params[:id]).count
   #   # draws = Move where game_id includes params[:id], id 1 and Game.draw is true
   #   # Calculate total matches
   #   wins = Game.where(win: params[:id]).count

@@ -1,8 +1,17 @@
+<%= link_to "Overview", overview_user_path %>
+<%= link_to "Challenges", challenges_user_path %>
+<%= link_to "Opponents", opponents_user_path %>
 
 
-render overview
+<% if params[:overview].present? %>
+  <%= render "overview" %>
+<% elsif params[:challenges].present? %>
+<%= render "challenge" %>
+<% elsif params[:opponents].present? %>
+  <%= render "opponent" %>
+
+<% else %>
+  <%= render "overview" %>
+<% end %>
 
 
-link to overview
-link to opponents
-link to challenges

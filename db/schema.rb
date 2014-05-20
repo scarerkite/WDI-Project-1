@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140519132607) do
+ActiveRecord::Schema.define(:version => 20140520122529) do
 
   create_table "games", :force => true do |t|
     t.boolean  "finished"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20140519132607) do
     t.boolean  "draw"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "player1"
+    t.integer  "player2"
   end
 
   create_table "moves", :force => true do |t|

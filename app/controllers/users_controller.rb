@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, only: :show
+
   def index
   #   @users = User.all
   end
@@ -19,8 +21,22 @@ class UsersController < ApplicationController
 
   # Access overview, opponents and challenges
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     #authorize! :show, @user
+  end
+
+  def overview
+
+
+  end
+
+  def opponents
+
+  end
+
+  def challenges
+
+
   end
 
 
