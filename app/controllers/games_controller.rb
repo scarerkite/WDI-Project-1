@@ -13,10 +13,12 @@ class GamesController < ApplicationController
     @game = Game.find params[:id]
   end
 
-  # Finished is the only field filled in
+  # 
   def create
     @game = Game.create(
       finished: false
+      #player_1: 
+      #player_2:
     )
 
     redirect_to "/games/#{@game.id}"
@@ -29,11 +31,17 @@ class GamesController < ApplicationController
 
   # When a user declines a challenge - the finished field is set to true.
   # Can no longer be accessed by anyone.
-  def destroy
+  def decline
     @game = Game.find(params[:id])
     @game.declined = true
     @game.finished = true
+    redirect_to challenges_user_path(current_user)
+  end
 
+  def accept
+    @game = Game.find(params[:id])
+    @game.declined = false
+    redirect_to "/games/#{@game.id}"
   end
 
 end

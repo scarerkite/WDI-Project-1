@@ -1,0 +1,15 @@
+.game_container {
+  width: 450px;
+  height: 450px;
+  background-color: black;
+}
+
+
+.cell {
+  height: 100px;
+  width: 100px;
+  margin: 25px;
+  background-color: red;
+  display: inline;
+  float: left;
+}

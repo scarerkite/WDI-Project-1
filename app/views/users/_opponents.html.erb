@@ -1,0 +1,20 @@
+<% if @games %>
+  <div id="games">
+    <% @games.each do |game| %>
+      <div class="game">
+        <%= @opponent %>
+          <% if @game %>
+            <%= link_to "Current Game", game_path(@game) %>
+          <% else %>
+            <%= link_to "Challenge!", games/create(player1: params[:id], player2: @opponent.id) %>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+<% else%>
+  <p>You haven't played anyone yet. Why not challenge someone?</p>
+  <%= link_to "New Game", new_game_path %>
+
+<% end %>

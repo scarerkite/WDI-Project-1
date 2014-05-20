@@ -13,7 +13,7 @@ GameApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   get "/login", to: "sessions#new"
-  get "/me", to: "users#show"
+  #get "/me", to: "users#show"
 
   root to: "users#show"
 end

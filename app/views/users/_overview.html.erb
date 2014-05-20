@@ -1,1 +1,38 @@
-Overview
+
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>win</th>
+      <th>lose</th>
+      <th>draw</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+      <td>vs. Computer</td>
+      <td><%= @c_wins %></td>
+      <td><%= @c_losses %></td>
+      <td><%= @c_draws %></td>
+    </tr>
+    <tr>
+      <td>vs. User</td>
+      <td><%= @u_wins %></td>
+      <td><%= @u_losses %></td>
+      <td><%= @u_draws %></td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td><%= @wins %></td>
+      <td><%= @losses %></td>
+      <td><%= @draw %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<footer>
+<%= link_to "New Game", new_game_path %>
+</footer>
