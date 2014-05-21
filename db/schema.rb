@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20140520122529) do
   end
 
   create_table "moves", :force => true do |t|
-    t.string   "move_no"
+    t.integer  "move_no"
     t.string   "placement"
     t.integer  "user_id"
     t.integer  "game_id"

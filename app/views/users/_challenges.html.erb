@@ -3,12 +3,11 @@
     <% @games.each do |game| %>
       <div class="game">
         <%= "#{@opponent} has challenged you to a game!" %>  
-            <%= link_to "Accept", "games/#{game_id}/accept" %> | 
-            <%= link_to "Decline", "games/#{game_id}/decline" %>         
+            <%= link_to "Accept", accept_game_path(@game) %> | 
+            <%= link_to "Decline", decline_game_path(@game) %>         
       </div>
     <% end %>
   </div>
-
 
 <% else%>
   <p>You don't have any challenges. Why not challenge someone?</p>

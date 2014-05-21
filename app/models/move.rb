@@ -3,4 +3,6 @@ class Move < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :game 
+
+  validates_uniqueness_of :move_no, scope: :game_id
 end

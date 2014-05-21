@@ -1,7 +1,7 @@
 class CreateMoves < ActiveRecord::Migration
   def change
     create_table :moves do |t|
-      t.string :move_no
+      t.integer :move_no
       t.string :placement
       t.references :user
       t.references :game

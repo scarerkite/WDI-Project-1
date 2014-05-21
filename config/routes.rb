@@ -1,5 +1,12 @@
 GameApp::Application.routes.draw do
-  resources :games
+  resources :games do
+    member do
+      resources :moves, only: [:create]
+      match :accept
+      match :decline
+    end
+  end
+
   resources :users do 
     member do
       match :overview
@@ -8,12 +15,13 @@ GameApp::Application.routes.draw do
     end
   end
 
+  
+
 
 
   resources :sessions, only: [:new, :create, :destroy]
 
   get "/login", to: "sessions#new"
-  #get "/me", to: "users#show"
 
   root to: "users#show"
 end

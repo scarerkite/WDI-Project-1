@@ -4,24 +4,25 @@ class GamesController < ApplicationController
   end
 
   # Called when a user starts a game with computer or user
-  def new
-    @game = Game.new
-  end
+  # def new
+  #   @game = Game.new
+  # end
 
   # The game being played
   def show
     @game = Game.find params[:id]
+    @moves = @game.moves
   end
 
   # 
   def create
-    @game = Game.create(
-      finished: false
-      #player_1: 
-      #player_2:
-    )
+    @game = Game.new
+    @game.player_1 = current_user
+    @game.player_2 = #params opponent
+    @game.finished = false
+    @game.save
 
-    redirect_to "/games/#{@game.id}"
+    redirect_to game_path(@game.id)
   end
 
   # Used to edit the game fields (e.g. win, lose etc.)

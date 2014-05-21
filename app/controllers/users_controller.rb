@@ -42,10 +42,15 @@ class UsersController < ApplicationController
   end
 
   def opponents
-    opp_player
-    @game = Game.where("player1 = #{params[:id]} OR player2 = #{params[:id]} AND finished= false")
-    # <%= link_to "Current Game", game_path(@game) %> 
+    @opponents = User.opponents_of_user(current_user)
+    @games = Game.all
+    # Create games in progress method.
 
+    @opponents.each do |opponent|
+      @games.detect do |game|
+        Game.game_in_progress(game).where("(player1 = current_user.id OR player2 = current_user.id) AND (player1 = opponent.id OR player2 = opponent.id)")       
+      end
+    end
     @partial_name = "opponents"
     render :show
   end
@@ -60,14 +65,9 @@ class UsersController < ApplicationController
     render :show
   end
 
-  def opp_player
+  def current_user_game
     Game.all.each do |game|
-      if player1 = params[:id]
-        @opp = User.find_by_id(game.player2)
-        @opponent = @opp.user_name
-      elsif player2 = params[:id]
-        @opp = User.find_by_id(game.player1)
-        @opponent = @opp.user_name
+      if game.player1 = params[:id] || game.player2 = params[:id]
       end
     end
   end

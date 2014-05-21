@@ -3,4 +3,6 @@ class Game < ActiveRecord::Base
 
   has_many :moves
   has_many :users, through: :moves
+
+  
 end
