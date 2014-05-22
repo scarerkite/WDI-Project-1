@@ -1,33 +1,42 @@
 module ApplicationHelper
   def render_square(row, col, moves)
-    css_class = get_css_class(row, col, moves)
-    case css_class
-    when "cross", "nought"
-      cell_html(css_class)
+    symbol = get_symbol(row, col, moves)
+    case symbol
+    when "X", "O"
+      cell_html(symbol)
     else
       link_to moves_path(params[:id], placement: "#{row}-#{col}"), method: :post do
-        cell_html(css_class)
+        cell_html(symbol)
       end
     end
   end
 
-  def cell_html(css_class)
+  def cell_html(symbol)
     html = <<-HTML_SNIPPET
-      <div class="cell" class='#{css_class}'>
-        class: '#{css_class}'
+      <div class="cell">
+        #{symbol}
       </div>
     HTML_SNIPPET
     html.html_safe
   end
 
 
-  def get_css_class(row, col, moves)
+  def get_symbol(row, col, moves)
     move = moves.detect { |m| m.placement == "#{row}-#{col}" }
     if move
-      move.move_no.odd? ? "cross" : "nought"
+      move.move_no.odd? ? "X" : "O"
     else
-      "free"
+      "?"
     end
   end
+
+  def ai
+    # if move_no.even?
+    # placement = any symbol with ?
+    # user_id = 1
+
+
+
+  end 
 
 end

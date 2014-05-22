@@ -20,11 +20,11 @@ class MovesController < ApplicationController
     @move.save!
 
 
-    if Move.game_won?(@game)
-      @game.finished = true
-      @winner_id = current_user.id
-      @game.save!
-    end
+    # if Game.game_won?(@game)
+    #   @game.finished = true
+    #   @winner_id = current_user.id
+    #   @game.save!
+    # end
 
     redirect_to game_path(@game)
   end

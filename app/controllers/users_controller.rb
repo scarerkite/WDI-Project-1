@@ -55,6 +55,7 @@ class UsersController < ApplicationController
       end
       hash[opponent] = shared_game
     end
+
     @partial_name = "opponents"
     render :show
   end

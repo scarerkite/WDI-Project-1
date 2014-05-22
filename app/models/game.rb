@@ -18,7 +18,7 @@ class Game < ActiveRecord::Base
   end
 
   def self.game_won?(game)
-    move_set = Move.where(user_id: @current_user, game_id: game.id).map(&:placement).to_set
+    move_set = moves.where(user_id: @current_user, game_id: game.id).map(&:placement).to_set
     WIN_SETS.any? do |win_set|
       move_set.superset? win_set
     end

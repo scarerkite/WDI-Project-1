@@ -1,27 +1,24 @@
 .game_container {
   width: 450px;
   height: 450px;
-  background-color: black;
-}
-
-.cross {
-  background-image:url('cross.png');
-}
-
-.nought {
-  background-image:url('nought.png');
-}
-
-.free {
-  background-image:url('free.png');
+  background-color: white;
 }
 
 .cell {
   height: 100px;
   width: 100px;
-  margin: 25px;
-  background-color: red;
+  margin: 15px;
+  background-color: #C9CCCC;
+  color: #2D2E2E;
   display: inline;
   float: left;
+  font-size: 90px;
+  text-align: center;
+  padding: 10px;
 }
 
+.cell:hover {
+  background-color: #2D2E2E;
+  color: #C9CCCC;
+
+}

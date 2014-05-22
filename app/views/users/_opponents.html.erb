@@ -3,10 +3,11 @@
   <h3><%= opponent.user_name %></h3>
   <div>
     <% if shared_game %>
-      <%= link_to "Current Game", game_path(shared_game) %>
+      <%= link_to "Current Game", game_path(shared_game), :class => 'button'  %>
     <% else %>
-      <%= link_to "New Game", games_path(player_2: opponent.id), method: :post %>
+      <%= link_to "New Game", games_path(player_2: opponent.id), method: :post, :class => 'button' %>
     <% end %>
   </div>
 <% end %>
 </div>
+
