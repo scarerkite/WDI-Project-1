@@ -42,7 +42,7 @@ class GamesController < ApplicationController
   def accept
     @game = Game.find(params[:id])
     @game.declined = false
-    redirect_to "/games/#{@game.id}"
+    redirect_to game_path(@game)
   end
 
 end

@@ -7,6 +7,10 @@ alice = User.create!(user_name: "alice", password: "password", email: "alice@ali
 bob = User.create!(user_name: "bob", password: "password", email: "bob@bob.com")
 chris = User.create!(user_name: "chris", password: "password", email: "chris@chris.com")
 derek = User.create!(user_name: "derek", password: "password", email: "derek@derek.com")
+ed = User.create!(user_name: "ed", password: "password", email: "ed@ed.com")
+fred = User.create!(user_name: "fred", password: "password", email: "fred@fred.com")
+gill = User.create!(user_name: "gill", password: "password", email: "gill@gill.com")
+harry = User.create!(user_name: "harry", password: "password", email: "harry@harry.com")
 
 g1 = Game.create!(finished: true, declined: false, draw: true, player_1: bob, player_2: alice)
 g2 = Game.create!(finished: true, declined: false, winner: alice, loser: bob, draw: false, player_1: alice, player_2: bob)
