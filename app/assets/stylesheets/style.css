@@ -3,20 +3,57 @@ body {
 
 }
 
-.button {
+h1 {
+  margin: 0;
+}
+
+h3 {
+  display: inline;
+}
+
+.opponent {
+  display: inline-block;
+  float: right;
+  margin-right: 300px;
+
+}
+
+.game_button {
+
+}
+
+.right_button {
+  float: right;
+}
+
+.left_button {
+  float: left;
+
+}
+
+.button, .right_button, .game_button, .left_button  {
   text-decoration: none;
   background-color: #C9CCCC;
   padding: 5px;
   margin: 5px;
   border-radius: 7px;
   color: #2D2E2E;
+  display: inline;
 }
 
-.button:hover {
+.button:hover, .right_button:hover {
   background-color: #7E7F7F;
   color: #C9CCCC;
 }
 
-.button:active {
+.button:active, .right_button:active {
   color: #2D2E2E;
+}
+
+td, th {
+  padding: 15px 30px 15px 0;
+}
+
+tr {
+  text-align: right;
 }

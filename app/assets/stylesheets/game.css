@@ -1,7 +1,8 @@
 .game_container {
   width: 450px;
   height: 450px;
-  background-color: white;
+  /*background-color: blue;*/
+  margin: auto;
 }
 
 .cell {

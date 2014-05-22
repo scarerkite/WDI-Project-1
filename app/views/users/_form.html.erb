@@ -1,4 +1,4 @@
-<div id="content">
+<div>
 <%= form_for @user do |f| %>
   <p>
     <%= @user.errors.full_messages.join(", ") unless @user.errors.empty? %>
@@ -20,7 +20,7 @@
     <%= f.text_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'button'  %>
   </div>
 
 <% end %>

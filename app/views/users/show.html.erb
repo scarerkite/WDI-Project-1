@@ -1,10 +1,4 @@
-<div class="header">
-  <%= link_to "Overview", overview_user_path(current_user), :class => 'button' %>
-  <%= link_to "Opponents", opponents_user_path(current_user), :class => 'button' %>
-</div>
-
-<div id="content">
 <%= render @partial_name || "overview" %>
-</div>
+
 
 
