@@ -1,10 +1,12 @@
 <%= link_to "Home", overview_user_path(current_user) %>
-<div class="game_container ">
-  <% 1.upto(3) do |row| %>
-    <% 1.upto(3) do |col| %>
-      <%= render_square(row, col, @moves) %>
+<div id="content">
+  <div class="game_container ">
+    <% 1.upto(3) do |row| %>
+      <% 1.upto(3) do |col| %>
+        <%= render_square(row, col, @moves) %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
 <div class="footer">
 

@@ -18,11 +18,11 @@ class GamesController < ApplicationController
   def create
     @game = Game.new
     @game.player_1 = current_user
-    @game.player_2 = #params opponent
+    @game.player_2 = User.find(params[:player_2])
     @game.finished = false
     @game.save
 
-    redirect_to game_path(@game.id)
+    redirect_to @game
   end
 
   # Used to edit the game fields (e.g. win, lose etc.)

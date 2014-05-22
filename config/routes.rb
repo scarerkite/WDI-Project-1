@@ -23,5 +23,5 @@ GameApp::Application.routes.draw do
 
   get "/login", to: "sessions#new"
 
-  root to: "users#show"
+  root to: "users#overview"
 end

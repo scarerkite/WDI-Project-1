@@ -1,7 +1,12 @@
-<%= @opponent %>
-<% if @game %>
-  <%= link_to "Current Game", game_path(@game) %>
-<% else %>
-  <%= link_to "New Game", new_game_path %>
+<div id="content">
+<% @opponents.each do |opponent, shared_game| %>
+  <h3><%= opponent.user_name %></h3>
+  <div>
+    <% if shared_game %>
+      <%= link_to "Current Game", game_path(shared_game) %>
+    <% else %>
+      <%= link_to "New Game", games_path(player_2: opponent.id), method: :post %>
+    <% end %>
+  </div>
 <% end %>
-
+</div>

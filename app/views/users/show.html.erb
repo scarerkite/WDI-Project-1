@@ -1,8 +1,11 @@
-<%= link_to "Overview", overview_user_path(current_user) %>
-<%= link_to "Challenges", challenges_user_path(current_user) %>
-<%= link_to "Opponents", opponents_user_path(current_user) %>
+<div class="header">
+  <%= link_to "Overview", overview_user_path(current_user) %>
+  <%= link_to "Challenges", challenges_user_path(current_user) %>
+  <%= link_to "Opponents", opponents_user_path(current_user) %>
+</div>
 
+<div id="content">
 <%= render @partial_name || "overview" %>
-
+</div>
 
 

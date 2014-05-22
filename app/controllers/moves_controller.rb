@@ -1,9 +1,5 @@
 class MovesController < ApplicationController
 
-  # def new
-  #   @move = Move.new    
-  # end
-
   def create
     @game = Game.find params[:id]
     @user_id = current_user
@@ -22,10 +18,13 @@ class MovesController < ApplicationController
     @move.game_id = @game.id   
 
     @move.save!
+
+    if game_won?(move_set)
+      @game.finished = true
+      @winner_id = current_user.id
+    end
+
     redirect_to game_path(@game)
-    # placement - comes from click on link
-    # move_no - is there already moves assigned to that game? find last, + 1. If no, 1
-    # user_id - current_user
   end
 
 end

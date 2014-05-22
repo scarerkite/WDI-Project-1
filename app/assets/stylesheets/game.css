@@ -5,15 +5,15 @@
 }
 
 .cross {
-  background-image:url('/../images/cross.png');
+  background-image:url('cross.png');
 }
 
 .nought {
-  background-image:url('/../images/nought.png');
+  background-image:url('nought.png');
 }
 
 .free {
-  background-image:url('/../images/free.png');
+  background-image:url('free.png');
 }
 
 .cell {

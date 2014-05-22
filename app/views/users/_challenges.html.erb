@@ -1,3 +1,4 @@
+<div id="content">
 <% if @games %>
   <div id="games">
     <% @games.each do |game| %>
@@ -13,3 +14,4 @@
   <p>You don't have any challenges. Why not challenge someone?</p>
   <%= link_to "New Game", new_game_path %>
 <% end %>
+</div>

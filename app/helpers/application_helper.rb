@@ -30,8 +30,4 @@ module ApplicationHelper
     end
   end
 
-  def game_in_progress(game)
-    Game.where(finished: false).all
-  end
-
 end

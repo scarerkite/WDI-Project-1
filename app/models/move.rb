@@ -1,5 +1,5 @@
 class Move < ActiveRecord::Base
-  attr_accessible :move_no, :placement, :game_id, :user_id
+  attr_accessible :move_no, :placement, :game, :game_id, :user, :user_id
 
   belongs_to :user
   belongs_to :game 
