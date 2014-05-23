@@ -30,13 +30,10 @@ module ApplicationHelper
     end
   end
 
-  def ai
-    # if move_no.even?
-    # placement = any symbol with ?
-    # user_id = 1
-
-
-
-  end 
+  # def ai
+  #   # if move_no.even?
+  #   # placement = any symbol with ?
+  #   # user_id = 1
+  # end 
 
 end
